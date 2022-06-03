@@ -194,6 +194,20 @@ body {
                     ion-icon {
                         color: $white;
                     }
+                    .btn-repeat {
+                        &.loop {
+                            ion-icon {
+                                color: $primary!important;
+                            }
+                        }
+                    }
+                    .btn-shuffle {
+                        &.active {
+                            ion-icon {
+                                color: $primary!important;
+                            }
+                        }
+                    }
                 }
             }
             .playlist {
