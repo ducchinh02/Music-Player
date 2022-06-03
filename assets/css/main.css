@@ -170,6 +170,12 @@ body.dark-mode .music-player .dashboard .cd-details .cd-artist {
 body.dark-mode .music-player .dashboard .control ion-icon {
   color: #fff;
 }
+body.dark-mode .music-player .dashboard .control .btn-repeat.loop ion-icon {
+  color: #F5B501 !important;
+}
+body.dark-mode .music-player .dashboard .control .btn-shuffle.active ion-icon {
+  color: #F5B501 !important;
+}
 body.dark-mode .music-player .playlist .song .song-details .song-name {
   color: #fff;
 }
