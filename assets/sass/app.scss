@@ -171,6 +171,9 @@ body {
                     &:hover {
                         background-color: $primary;
                     }
+                    .options {
+                        color: #000;
+                    }
                 }
             }
         }
@@ -231,6 +234,9 @@ body {
                             .song-artist {
                                 color: #000;
                             }
+                        }
+                        .options {
+                            color: #000;
                         }
                         &:hover {
                             background-color: $primary;
