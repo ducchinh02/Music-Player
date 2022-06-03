@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XXDCII - Music Player</title>
+    <link rel="icon" href="assets/img/logo.jpg" type="img/x-icon">
+    <!-- css bootstrap -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- css custom -->
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body class="trans_3">
+    <div class="music-player br-2 trans_3 ">
+        <!-- dashboard -->
+        <div class="dashboard">
+            <!-- header -->
+            <header class="d-flex align-items-center justify-content-between">
+                <h4 class="mb-0">Now Playing </h4>
+                <div class="toggle-mode trans_3">
+                    <span class="slider-round d-flex align-items-center justify-content-center trans_3 ">
+                        <ion-icon class="sun" name="sunny-outline"></ion-icon>
+                    <ion-icon class="moon" name="moon-outline"></ion-icon>
+                </div>
+            </header>
+            <!-- cd -->
+            <div class="cd text-center trans_3">
+                <div class="cd-thumb">
+                    <img src="assets/img/ccyld.webp" alt="" srcset="">
+                </div>
+            </div>
+            <div class="cd-details text-center">
+                <div class="cd-name pb-2 font-weight-bold">Có Chắc Yêu Là Đây</div>
+                <div class="cd-artist">Sơn Tùng M-TP</div>
+            </div>
+            <!-- control -->
+            <div class="control my-3 d-flex align-items-center justify-content-center">
+                <!-- repeat -->
+                <div class="btn btn-repeat">
+                    <ion-icon name="repeat"></ion-icon>
+                </div>
+                <!-- back -->
+                <div class="btn btn-previous">
+                    <ion-icon name="play-skip-back"></ion-icon>
+                </div>
+                <!-- play - pause -->
+                <div class="btn btn-play d-flex align-items-center justify-content-center">
+                    <ion-icon class="play"name="play"></ion-icon>
+                    <ion-icon class="pause"name="pause"></ion-icon>
+                </div>
+                <!-- next -->
+                <div class="btn btn-next">
+                    <ion-icon name="play-skip-forward"></ion-icon>
+                </div>
+                <!-- shuffle -->
+                <div class="btn btn-shuffle">
+                    <ion-icon name="shuffle"></ion-icon>
+                </div>
+            </div>
+            <!-- range -->
+            <input id="progress" class="progress my-3 trans_3" type="range" value="0" step="1" min="0" max="100">
+            <audio id="audio" src=""></audio>
+        </div>
+        <!-- playlist -->
+        <div class="playlist mt-5">
+            <!-- header -->
+            <header>
+                <h4 class="d-flex align-items-center font-weight-bold"><span class="pr-2">Songs</span>
+                    <ion-icon name="musical-note"></ion-icon>
+                    </h4>
+            </header>
+            <!-- song -->
+            <div class="playlist-item"></div>
+            </div>
+        </div>
+        <!-- js -->
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

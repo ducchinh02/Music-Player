@@ -1,0 +1,64 @@
+:root {
+    --primary: #F5B501;
+    --black: #363437;
+    --gray: #676565;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    --bgr: #f2f2f2;
+    font-size: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bgr);
+    padding: 3rem;
+}
+
+body.dark-mode {
+    --bgr: #676565;
+}
+
+a,
+a:hover {
+    text-decoration: none
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+input,
+button {
+    outline: none;
+    border: none;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+.br-2 {
+    border-radius: 2rem;
+}
+
+.trans_3 {
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+}
+
+.my-3 {
+    margin-top: 3rem!important;
+    margin-bottom: 3rem!important;
+}
