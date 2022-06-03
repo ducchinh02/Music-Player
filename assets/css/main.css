@@ -194,7 +194,7 @@ body.dark-mode .music-player .playlist .song.playing .song-details .song-name {
 body.dark-mode .music-player .playlist .song.playing .song-details .song-artist {
   color: #000;
 }
-body.dark-mode .music-player .playlist .song.playing .options {
+body.dark-mode .music-player .playlist .song.playing .options ion-icon {
   color: #000;
 }
 body.dark-mode .music-player .playlist .song.playing:hover {
