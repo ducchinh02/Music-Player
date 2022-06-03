@@ -153,6 +153,9 @@ body .music-player .playlist .song.playing .song-details .song-artist {
 body .music-player .playlist .song.playing:hover {
   background-color: #F5B501;
 }
+body .music-player .playlist .song.playing .options {
+  color: #000;
+}
 body.dark-mode {
   --bgr: #676565;
 }
@@ -189,6 +192,9 @@ body.dark-mode .music-player .playlist .song.playing .song-details .song-name {
   color: #000;
 }
 body.dark-mode .music-player .playlist .song.playing .song-details .song-artist {
+  color: #000;
+}
+body.dark-mode .music-player .playlist .song.playing .options {
   color: #000;
 }
 body.dark-mode .music-player .playlist .song.playing:hover {
