@@ -114,7 +114,8 @@ const appMusic = {
                 const scrollTop = window.screenY || document.documentElement.scrollTop
                 const newCdWidth = cdWidth - scrollTop
                     // cd.style.width = newCdWidth > 0 ? newCdWidth + 'px' : 0
-                cd.style.opacity = newCdWidth / cdWidth
+                const newOpacity = newCdWidth / cdWidth
+                cd.style.opacity = newOpacity > 0 ? newOpacity : 0
             }
             // play - pause
         playMusic.addEventListener('click', () => {
@@ -127,11 +128,44 @@ const appMusic = {
                 playMusic.classList.remove('playing')
             }
         })
-        audio.ontimeupdate = function() {
+        audio.ontimeupdate = function(e) {
             if (audio.duration) {
                 const progressPercent = Math.floor(audio.currentTime / audio.duration * 100)
                 progress.value = progressPercent
             }
+            let currentTime = e.target.currentTime
+            let audioDuration = audio.duration
+                // get current time
+            let currentMin = Math.floor(currentTime / 60)
+            let currentSec = Math.floor(currentTime % 60)
+            if (currentSec < 10) {
+                currentSec = `0${currentSec}`
+            }
+            if (currentMin < 10) {
+                currentMin = `0${currentMin}`
+            }
+            // total time
+            let totalMin = Math.floor(audioDuration / 60) - currentMin
+            let totalSec = Math.floor(audioDuration % 60) - currentSec
+            if (0 <= totalSec && totalSec < 10) {
+                totalSec = `0${totalSec}`
+            }
+            if (totalSec < 0) {
+                console.log(123);
+                totalSec = ((audioDuration - currentTime) % 60).toFixed(0)
+                totalMin -= 1;
+            }
+            if (totalMin < 10) {
+                totalMin = `0${totalMin}`
+            }
+            if (isNaN(audioDuration)) {
+                $('.duration').textContent = `00:00`
+            } else {
+                $('.duration').textContent = `${totalMin}:${totalSec}`
+
+            }
+
+            $('.currentTime').textContent = `${currentMin}:${currentSec}`
         }
         audio.addEventListener('ended', () => {
             if (this.randomPlaying) {
@@ -143,8 +177,8 @@ const appMusic = {
 
         })
         progress.onchange = function(e) {
-            const seektime = audio.duration / 100 * e.target.value
-            audio.currentTime = seektime
+            const seekTime = audio.duration / 100 * e.target.value
+            audio.currentTime = seekTime
         }
         next.addEventListener('click', () => {
             if (this.randomPlaying) {
@@ -247,16 +281,17 @@ const appMusic = {
         cdName.textContent = this.currentSong.name
         cdArtist.textContent = this.currentSong.artist
         audio.src = this.currentSong.audio
+
     },
     start: function() {
         // hien thi danh sach bai hat
         this.render()
             // dinh nghia thuoc tinh
         this.defineProperties()
-            // xu ly su kien 
-        this.handleEvents()
             // chay bai hat dau tien
         this.loadCurrentSong()
+            // xu ly su kien 
+        this.handleEvents()
     },
 }
 appMusic.start()
